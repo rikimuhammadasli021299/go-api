@@ -14,6 +14,12 @@ type Product struct {
 }
 
 func SelectAll() *gorm.DB{
+	// using raw query
+	// items := []Product{}
+	// config.DB.Raw("SELECT * FROM products").Scan(&items)
+	// return items
+
+	// using orm
 	items := []Product{}
 	return config.DB.Find(&items)
 }
